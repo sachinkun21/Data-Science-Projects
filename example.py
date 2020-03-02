@@ -1,3 +1,23 @@
+# Single Image
+
+img = r"Imagepath.jpg"
+
+import base64
+
+with open(img, "rb") as image_file:
+    encoded_string = base64.b64encode(image_file.read())
+str1_NP = encoded_string.decode('utf-8')
+
+
+dict1 = json.dumps({'FrontCamera':str1_NP , 'BackCamera': str1_NP})
+
+run(dict1)
+
+
+
+
+
+# Multiple image Files
 %%time
 import glob
 list_of_Incorrect_LE160486 = glob.glob('F:\LE160486\IncorrectPlate\*')
